@@ -29,14 +29,14 @@ bool DanhGiaBT(const string& BieuThuc, const unordered_map<char, bool>& giatri){
         } else if (ch == '¬') {
             bool gt = s.top(); s.pop();
             s.push(!gt);
-        } else if (ch == '∧' || ch == 'V' || ch == '-') {
+        } else if (ch == '∧' || ch == '∨' || ch == '->') {
             bool b = s.top(); s.pop();
             bool a = s.top(); s.pop();
             if (ch == '∧') {
                 s.push(a && b);
-            } else if (ch == 'V') {
+            } else if (ch == '∨') {
                 s.push(a || b);
-            } else if (ch == '-') {
+            } else if (ch == '->') {
                 s.pop();
                 bool b = s.top(); s.pop();
                 bool a = s.top(); s.pop();
